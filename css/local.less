@@ -1,0 +1,236 @@
+/*-- -------------------------- -->
+<---          Landing           -->
+<--- -------------------------- -*/
+
+@mainColor: #124CB8;
+@hoverColor: #1864C4;
+@btnHoverColor: #1313bc;
+
+main {
+    width: 100%;
+    height: 100vh;
+    min-height: 1000/20em;
+    
+}
+
+/*-- -------------------------- -->
+<---          Hero              -->
+<--- -------------------------- -*/
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 90vh;
+    border-bottom: 0.5px solid black;
+    .hero-right-area {      
+        background: whitesmoke;
+        padding: 24/20em;
+        display: grid;
+        align-content: center;
+        order: -1;
+
+        p {
+            margin-bottom: 58/20em;
+        }
+        
+    }
+    .hero-left-area {
+        display: grid; 
+        padding: 24/20em;
+        align-content: center;
+    }
+}
+
+/*-- -------------------------- -->
+<---         Services           -->
+<--- -------------------------- -*/
+.services {
+    padding-top: 24/20em;
+    padding-bottom: 40/20em;
+
+    h2 {
+        font-size: 52/20em;
+        margin-top: 8/20em;
+        margin-bottom: 8/20em;
+        margin-left: 8/20em;
+    }
+
+    h3 {
+        margin-top: 6/20em;
+        margin-bottom: 4/20em;
+    }
+
+    p {
+        margin: 8/20em;
+        margin-left: 24/20em;
+        margin-bottom: 28/20em;
+    }
+
+    .services-area {
+        display: grid;
+        
+    }
+
+    .service-item {
+        padding: 24/20em;
+        border-radius: 4px;
+    }
+    .service-description {
+        margin-top: 4/20em;
+        margin-bottom: 8/20em;
+    }
+}
+
+/*-- -------------------------- -->
+<---         Features           -->
+<--- -------------------------- -*/
+.features {
+    padding-top: 24/20em;
+    padding-bottom: 50/20em;
+    
+    h2 {
+        font-size: 52/20em;
+        margin-top: 8/20em;
+        margin-bottom: 8/20em;
+        margin-left: 8/20em;
+    }
+
+    h3 {
+        margin-top: 12/20em;
+        margin-bottom: 4/20em;
+    }
+    
+
+    .features-area {
+        display: grid;
+        
+    }
+    .feature-item {
+        margin: 0.9em;
+        margin-bottom: 0.6em;
+        padding: 1.4em 0.8em 0.6em 0.8em;
+        border-radius: 0.4rem;
+        overflow: hidden;
+        background-color: rgba(240, 240, 240,0.5);
+        display: grid;
+        justify-items: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: all 150ms ease-in-out;
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+    .feature-image {
+        border-radius: 0.4rem;
+    }
+    .feature-image-1 {
+        background-image: url('/images/image-plane.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width:220/20em;
+        height:220/20em;
+    }
+    .feature-image-2 {
+        background-image: url('/images/image-plane.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width:220/20em;
+        height:220/20em;
+    }
+    .feature-image-3 {
+        background-image: url('/images/image-plane.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width:220/20em;
+        height:220/20em;
+    }
+    .feature-image-4 {
+        background-image: url('/images/image-plane.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width:220/20em;
+        height:220/20em;
+    }
+    .feature-description {
+        text-align: center;
+        padding-bottom: 1.2em;
+    }
+}
+
+
+/*-- -------------------------- -->
+<---       Media queries        -->
+<--- -------------------------- -*/
+
+
+// 2 COLUMN LANDING ON DESKTOP VIEW
+@media (min-width: 51em) {
+    .hero {
+        grid-template-columns: 1fr 1fr;
+        .hero-right-area {
+            order: 2;
+        }
+    }
+    
+}
+
+@media screen and (min-width: 0px)  {
+    .services-area {
+        grid-template-columns: 1fr;
+    }
+    .features-area {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* Ipad Pro */
+@media screen and (min-width: 450px) and (max-width: 991px) { 
+
+    .services-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .features-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 750px) and (max-width: 1023px) {
+    .services-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .features-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small Desktop */
+@media screen and (min-width: 1024px) {
+
+    .services-area {
+        grid-template-columns:repeat(4, 1fr);
+    }
+    .features-area {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Regular Desktop */
+@media only screen and (min-width: 2000px) {
+    .services-area {
+        grid-template-columns:repeat(4, 1fr);
+    }
+    .features-area {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Large Desktop */
+@media only screen and (min-width: 2000px) {
+
+}
