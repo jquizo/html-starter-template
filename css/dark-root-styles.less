@@ -1,0 +1,69 @@
+/* Dark mode styles for main styles, navigation, and footer */
+
+@media screen and (min-width: 0px) {
+
+    :root {
+        --dark: #121212;
+        --medium: #333;
+        --light: #3c3c3c;
+    }
+
+}
+
+body.dark-mode .navbar {
+    background-color: var(--dark);
+}
+
+body.dark-mode .footer {
+    background-color: var(--dark);
+}
+
+body.dark-mode p {
+    color: #fff
+}
+
+
+
+/*-- -------------------------- -->
+<---      DARK MODE BUTTON      -->
+<--- -------------------------- -*/
+
+.dark-mode-button {
+    position: fixed; 
+    bottom: 2.5em; 
+    right: 2em;
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: var(--dark);
+    color: white;
+    cursor: pointer; 
+    height: 2.8em;
+    width: 2.8em;
+    border-radius: 50%; 
+    font-size: 0.8em; 
+    &:hover {
+        background-color: var(--medium);
+    }   
+    i:last-child {
+        display: none;
+    }
+}
+
+body.dark-mode .dark-mode-button {
+    background-color: rgb(199, 199, 27);
+    color: #121212;
+    box-shadow: rgba(255, 255, 255, 0.3) 0/20em 8/20em 30/20em 0/20em;
+    &:hover {
+        background-color: yellow;
+    }
+}
+
+// Hide sun icon on dark mode
+body.dark-mode .dark-toggle i:last-child {
+    display: block;
+}
+// Hide moon icon on dark mode
+body.dark-mode .dark-toggle i:first-child {
+    display: none;
+}

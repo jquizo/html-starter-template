@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@mainColor: #124CB8;
+@secondaryColor: #1864C4;
+@HoverColor: #1313bc;
+@dark: #121212;
+@medium: #333;
+@light: #3c3c3c;
+
+// Mobile viewport onwards
+@media screen and (min-width: 0px) {
+
+    body {
+        font-size: 17px;
+    }
+
+    * {
+		-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+        
+        ::before {
+            -webkit-box-sizing: border-box;
+				box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+        }
+        ::after {
+            -webkit-box-sizing: border-box;
+				box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+        }
+	}
+
+	html {
+		scroll-behavior: smooth;
+	  }
+
+    .section {
+        padding-top: 100/20em;
+        padding-bottom: 100/20em;
+    }
+
+    body, html, p{
+		font-family: "Montserrat", sans-serif;
+        
+	}
+
+    p {
+        font-weight: 500;
+    }
+
+    a:hover {
+		cursor: pointer;
+	}
+
+    h1, h2, h3, h4, h5, h6 {
+		margin: 0;
+		line-height: 1em;
+	}
+
+    .container {
+        padding: 0 10/20em;
+
+	}
+}
+
+/*-- -------------------------- -->
+<---         NAVIGATION         -->
+<--- -------------------------- -*/
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: @mainColor;
+    color: white;
+    padding: 8/20em;
+    font-size: 20/20em;
+}
+
+.brand-title {
+    margin: 12/20em;
+}
+
+.navbar-links {
+    text-align: center;
+    ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+        &:hover {
+            background-color: @secondaryColor;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 18/20em;
+            transition: 0.4s;
+            
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+.toggle-button {
+    position: absolute;
+    top: 1rem;
+    right: 1.1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30/20em;
+    height: 22/20em;
+
+    .bar {
+        height: 3/20em;
+        width: 100%;
+        background-color: white;
+        border-radius: 8px;
+    }
+}
+
+// Navbar Signup & Login Buttons
+.btn {
+    color: white !important;
+    display: inline-block;
+    background-color: @secondaryColor;
+    border-radius: 8px;
+    padding: 10/20em !important;
+    margin: 8/20em !important;
+    text-decoration: none;
+    transition: 0.4s;   
+    &:hover {
+        background-color: @HoverColor;
+    }
+    &:visited {
+    color: inherit;
+    }
+}
+
+// Show navbar toggle button under 600px view
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .toggle-button {
+            display: flex;
+        }
+
+        .navbar-links {
+            display: none;
+            width: 100%;
+
+            ul {
+                width: 100%;
+                flex-direction: column;
+
+                li {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+/*-- -------------------------- -->
+<---         Footer             -->
+<--- -------------------------- -*/
+.footer {
+    background: @mainColor;
+    color: white;
+    padding: 34/20em;
+    text-align: center;
+    font-size: 18/20em;
+    .footer-logo {
+        color: white;
+        display: inline-block;
+        padding-top: 22/20em;
+        margin-bottom: 18/20em;
+        text-decoration: none;
+        transition: all 100ms ease-in;
+        grid-area: logo;
+        &:hover {
+            color: @HoverColor;
+        }
+    }
+    .footer-social {
+        margin-bottom: 24/20em;
+        grid-area: socials;
+        a {
+            text-decoration: none;
+            color: white;
+            transition: all 100ms ease-in;
+            
+            &:hover {
+                color: @HoverColor;
+            }
+        }
+        i {
+            font-size: 1.4em;
+            background-color: @secondaryColor ;
+            padding: 0.2em;
+            border-radius: 12px;
+        }
+        &:visited {
+            color: inherit;
+        }
+        i:hover {
+            transform: scale(1.1);
+        }
+    }
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.8em;
+        a {
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            transition: all 0.4s;
+            &:hover {
+                color: @HoverColor;
+                transform: scale(1.05);
+            }
+        }
+        
+        &.footer-col-1 {
+            grid-area: col-1;
+        }
+
+        &.footer-col-2 {
+            grid-area: col-2;
+            margin-bottom: 10/20em;
+        }
+    }
+    .footer-cta {
+        grid-area: cta;
+        
+        .btn {
+            width: 160/20em;
+        }
+        .footer-copyright {
+            display: grid;
+            margin-top: 18/20em;
+            
+        }
+    }
+}
+
+// 4 Column footer on desktop
+@media (min-width: 51em) {
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "logo col-1 col-2 cta"
+            "socials col-1 col-2 cta";
+        justify-items: start;
+    }
+    .footer-links {
+        align-items: start !important;
+    }
+    .footer-cta {
+        justify-self: end;
+    }
+}
+
+
+/*-- -------------------------- -->
+<---         MEDIA QUERIES      -->
+<--- -------------------------- -*/
+
+@media screen and (min-width: 0px) { 
+ 
+}
+
+/* Ipad Pro */
+@media screen and (min-width: 450px) and (max-width: 991px) { 
+
+}
+
+/* Tablets */
+@media screen and (min-width: 750px) and (max-width: 1023px) {
+
+}
+
+/* Small Desktop */
+@media screen and (min-width: 1024px) {
+}
+
+/* Regular Desktop */
+
+@media only screen and (min-width: 2000px) {
+    body {
+        font-size: 1vw;
+    }
+}
+
+/* Large Desktop */
+@media only screen and (min-width: 2000px) {
+    body {
+        font-size: 1vw;
+    }
+}
+
